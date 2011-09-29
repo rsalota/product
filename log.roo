@@ -1,0 +1,27 @@
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 20:32:12
+project --topLevelPackage com.openwebsys.product
+exit
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log closed at 2011-09-28 20:34:20
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 20:34:24
+hint
+hint
+persistence setup --provider HIBERNATE --database MYSQL 
+hint
+entity --class ~.domain.Product 
+field string --fieldName name --notNull --sizeMin 256
+// [failed] field string --fieldName name --notNull --sizeMin 256
+field string --fieldName description --notNull --sizeMin 256
+exit
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log closed at 2011-09-28 21:00:14
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 21:02:04
+web mvc setup
+web mvc all --package ~.web
+exit
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log closed at 2011-09-28 21:03:43
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 21:04:11
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 21:04:59
+exit
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log closed at 2011-09-28 21:05:09
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log opened at 2011-09-28 21:10:03
+exit
+// Spring Roo 1.1.4.RELEASE [rev f787ce7] log closed at 2011-09-28 21:10:08
