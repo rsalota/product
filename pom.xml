@@ -354,6 +354,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>product</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
