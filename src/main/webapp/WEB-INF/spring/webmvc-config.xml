@@ -58,6 +58,8 @@
 	
 	<!-- allows for integration of file upload functionality -->
 	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
+
+<bean class="com.openwebsys.product.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
 <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
     <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
   </bean>
@@ -70,5 +72,39 @@
       </list>
     </property>
   </bean>
-<bean class="com.openwebsys.product.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
+
+<bean id="htmlMediaType" class="org.springframework.http.MediaType">
+  <constructor-arg value="text" />
+  <constructor-arg value="html" />
+</bean>
+<bean
+class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+  <property name="order" value="0" />
+  <property name="defaultContentType">
+    <ref bean="htmlMediaType" />
+  </property>
+  <property name="mediaTypes">
+    <map>
+      <entry key="json" value="application/json" />
+      <entry key="xml" value="application/xml" />
+    </map>
+  </property>
+  
+  <property name="defaultViews">
+    <list>
+      <bean
+     class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+      <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+        <property name="marshaller">
+          <bean class="org.springframework.oxm.castor.CastorMarshaller" />
+        </property>
+      </bean>
+    </list>
+  </property>
+
+  <property name="viewResolvers">
+    <ref bean="tilesViewResolver" />
+  </property>
+</bean>
+
 </beans>
